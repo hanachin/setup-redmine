@@ -6,6 +6,6 @@ inputs:
     default: 'trunk'
 runs:
   using: docker
-  image: buildpack-deps:stretch-scm
+  image: docker://buildpack-deps:stretch-scm
   args:
     - ${{ inputs.redmine-version }}
