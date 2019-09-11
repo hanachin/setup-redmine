@@ -1,0 +1,11 @@
+name: Setup Redmine
+description: Setup Redmine
+inputs:
+  redmine-version:
+    description: version of Redmine
+    default: 'trunk'
+runs:
+  using: docker
+  image: buildpack-deps:stretch-scm
+  args:
+    - ${{ inputs.redmine-version }}
