@@ -4,9 +4,10 @@ set -e
 
 if [ $1 = trunk ]; then
   svn co --non-interactive --config-option servers:global:ssl-authority-files=<(curl -sL https://www.gandi.net/static/CAs/GandiStandardSSLCA2.pem) https://svn.redmine.org/redmine/trunk redmine-trunk
-  mv redmine-trunk $2
-  exit
+else
+  curl https://redmine.org/releases/redmine-$1.tar.gz | tar zx
 fi
 
-curl https://redmine.org/releases/redmine-$1.tar.gz | tar zx
-mv redmine-$1 $2
+if [ -z $2 ]; then
+  mv redmine-$1 $2
+fi

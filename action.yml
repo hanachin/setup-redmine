@@ -6,6 +6,7 @@ inputs:
     default: 'trunk'
   path:
     description: path to download Redmine
+    default: 'path'
 runs:
   using: docker
   image: Dockerfile
