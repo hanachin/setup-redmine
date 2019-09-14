@@ -4,10 +4,8 @@ inputs:
   redmine-version:
     description: version of Redmine
     default: 'trunk'
-  path:
-    description: path to download Redmine
 runs:
   using: docker
   image: Dockerfile
   args:
-    - ${{ inputs.redmine-version }} ${{ inputs.path }}
+    - ${{ inputs.redmine-version }}
