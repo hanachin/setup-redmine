@@ -10,10 +10,10 @@ fi
 
 mv redmine-$1 /tmp
 
-if [ -n $2 ]; then
-  mv /tmp/redmine-$1 $2
-  echo ::set-output name=path::$2
-else
+if [ -z $2 ]; then
   mv -T /tmp/redmine-$1 /github/workspace
   echo ::set-output name=path::/github/workspace
+else
+  mv /tmp/redmine-$1 $2
+  echo ::set-output name=path::$2
 fi
