@@ -11,7 +11,7 @@ fi
 mv redmine-$1 /tmp
 
 if [ -z $2 ]; then
-  rsync -av /tmp/redmine-$1 /github/workspace
+  rsync -r /tmp/redmine-$1/ /github/workspace
 else
   mv /tmp/redmine-$1 $2
 fi
