@@ -11,10 +11,7 @@ fi
 mv redmine-$1 /tmp
 
 if [ -z $2 ]; then
-  ls /github
-  mv -T /tmp/redmine-$1 /github/workspace
-  echo ::set-output name=path::/github/workspace
+  rsync -r /tmp/redmine-$1 /github/workspace
 else
   mv /tmp/redmine-$1 $2
-  echo ::set-output name=path::$2
 fi
