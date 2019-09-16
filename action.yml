@@ -16,3 +16,4 @@ runs:
   args:
     - ${{ inputs.redmine-version }}
     - ${{ inputs.path }}
+    - ${{ github.workspace }}

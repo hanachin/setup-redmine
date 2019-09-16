@@ -14,6 +14,6 @@ if [ -n $2 ]; then
   mv /tmp/redmine-$1 $2
   echo ::set-output name=path::$2
 else
-  mv -T /tmp/redmine-$1 $GITHUB_WORKSPACE
-  echo ::set-output name=path::$GITHUB_WORKSPACE
+  mv -T /tmp/redmine-$1 $3
+  echo ::set-output name=path::$3
 fi
