@@ -8,6 +8,9 @@ else
   curl https://redmine.org/releases/redmine-$1.tar.gz | tar zx
 fi
 
-if [ -z $2 ]; then
+if [ -n $2 ]; then
   mv redmine-$1 $2
+  echo ::set-output name=path::$2
+else
+  echo ::set-output name=path::$(pwd)/redmine-$1
 fi
